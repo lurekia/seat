@@ -1,0 +1,186 @@
+/* 主题色变量 */
+:root {
+  --primary-color: #409EFF;
+  --primary-light: #66b1ff;
+  --primary-dark: #3a8ee6;
+  --success-color: #67C23A;
+  --warning-color: #E6A23C;
+  --danger-color: #F56C6C;
+  --info-color: #909399;
+  --text-primary: #303133;
+  --text-regular: #606266;
+  --text-secondary: #909399;
+  --border-color: #DCDFE6;
+  --background-color: #f5f7fa;
+}
+
+/* 按钮样式 */
+.el-button--primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-light) !important;
+}
+
+/* 分页样式 */
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: var(--primary-color) !important;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+  color: var(--primary-color) !important;
+}
+
+/* 对话框样式 */
+.el-dialog__header {
+  background-color: var(--background-color);
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.el-dialog__title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* 表单样式 */
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  border-color: var(--primary-color) !important;
+}
+
+.el-upload--picture-card:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* 菜单样式 */
+.el-menu-item.is-active {
+  color: var(--primary-color) !important;
+}
+
+.el-menu-item:hover {
+  background-color: rgba(64, 158, 255, 0.1) !important;
+}
+
+/* 标签页样式 */
+.el-tabs__item.is-active {
+  color: var(--primary-color) !important;
+}
+
+.el-tabs__active-bar {
+  background-color: var(--primary-color) !important;
+}
+
+/* 选择器样式 */
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: var(--primary-color) !important;
+}
+
+.el-select-dropdown__item.selected {
+  color: var(--primary-color) !important;
+}
+
+/* 开关样式 */
+.el-switch.is-checked .el-switch__core {
+  border-color: var(--primary-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+/* 单选框样式 */
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: var(--primary-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+.el-radio__input.is-checked + .el-radio__label {
+  color: var(--primary-color) !important;
+}
+
+/* 复选框样式 */
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: var(--primary-color) !important;
+}
+
+/* 链接样式 */
+.el-link {
+  color: var(--primary-color) !important;
+}
+
+/* 卡片样式 */
+.el-card__header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 表格样式 */
+.el-table th {
+  background-color: var(--background-color) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background-color: rgba(64, 158, 255, 0.05) !important;
+}
+
+/* 步骤条样式 */
+.el-steps .el-step__head.is-process {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.el-steps .el-step__title.is-process {
+  color: var(--primary-color) !important;
+}
+
+/* 进度条样式 */
+.el-progress-bar__inner {
+  background-color: var(--primary-color) !important;
+}
+
+/* 树形控件样式 */
+.el-tree-node__content:hover {
+  background-color: rgba(64, 158, 255, 0.1) !important;
+}
+
+.el-tree-node.is-current > .el-tree-node__content {
+  background-color: rgba(64, 158, 255, 0.1) !important;
+}
+
+/* 日期选择器样式 */
+.el-date-table td.current:not(.disabled) span {
+  background-color: var(--primary-color) !important;
+}
+
+.el-date-table td.today span {
+  color: var(--primary-color) !important;
+}
+
+/* 上传组件样式 */
+.el-upload-dragger:hover {
+  border-color: var(--primary-color) !important;
+}
+
+/* 全局滚动条样式 */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color) !important;
+}
+
+/* 全局过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+} 

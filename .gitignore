@@ -1,0 +1,26 @@
+.DS_Store
+*.swp
+
+# 数据文件
+/data/
+!/data/.gitkeep
+
+# 环境相关
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# 临时文件
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 后端目标
+target/
+# 前端依赖
+node_modules/

@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.ml-5 {
+    margin-left: 5px;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+.pd-10 {
+    padding: 10px 0;
+}
+.m-10 {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+.el-tooltip__popper {
+  max-width: 800px;
+}
+
+.theme1 {
+    --font-color-primary:rgb(24,144,255);
+    --back-color-primary:rgb(24,144,255,0.1);
+
+}
+.theme2 {
+    --font-color-primary:rgb(245,34,45);
+    --back-color-primary:rgb(245,34,45,0.1);
+}
+.theme3 {
+    --font-color-primary:rgb(250, 84, 28);
+    --back-color-primary:rgb(250, 84, 28,0.1);
+}
+.theme4 {
+    --font-color-primary:rgb(250, 173, 20);
+    --back-color-primary:rgb(250, 173, 20,0.1);
+}
+.theme5 {
+    --font-color-primary:rgb(19, 194, 194);
+    --back-color-primary:rgb(19, 194, 194,0.1);
+}
+.theme6 {
+    --font-color-primary:rgb(82, 196, 26);
+    --back-color-primary:rgb(82, 196, 26,0.1);
+}
+.theme7 {
+    --font-color-primary:rgb(47, 84, 235);
+    --back-color-primary:rgb(47, 84, 235,0.1);
+}
+.theme8 {
+    --font-color-primary:rgb(114, 46, 209);
+    --back-color-primary:rgb(114, 46, 209,0.1);
+}
