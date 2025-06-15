@@ -72,6 +72,10 @@ public class SeatController {
                         @RequestParam(required = false) String status,
                         @RequestParam(defaultValue = "1") Integer pageNum,
                         @RequestParam(defaultValue = "10") Integer pageSize) {
+        System.out.println("name: " + name);
+        System.out.println("status: " + status);
+        System.out.println("pageNum: " + pageNum);
+        System.out.println("pageSize: " + pageSize);
         LambdaQueryWrapper<Seat> wrapper = new LambdaQueryWrapper<>();
         if (name != null && !name.isEmpty()) {
             wrapper.like(Seat::getName, name);

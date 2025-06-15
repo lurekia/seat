@@ -96,17 +96,16 @@ setRoutes()
 router.beforeEach((to, from, next) => {
   localStorage.setItem("currentPathName", to.name)  // 设置当前的路由名称
   store.commit("setPath")
-  // if (!to.matched.length) {
-  //   const menus = localStorage.getItem("menus")
-  //   if (!menus) {
-  //     next("/login")
-  //   } else {
-  //     next("/404")
-  //   }
-  // } else {
-  //   next()
-  // }
-  next()
+  if (!to.matched.length) {
+    const menus = localStorage.getItem("menus")
+    if (!menus) {
+      next("/login")
+    } else {
+      next("/404")
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

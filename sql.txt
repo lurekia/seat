@@ -1,0 +1,108 @@
+-- 用户表
+CREATE TABLE `user` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `username` varchar(255) NOT NULL COMMENT '用户名',
+    `password` varchar(255) NOT NULL COMMENT '密码',
+    `nickname` varchar(255) COMMENT '昵称',
+    `email` varchar(255) COMMENT '邮箱',
+    `phone` varchar(20) COMMENT '电话',
+    `address` varchar(255) COMMENT '地址',
+    `create_time` datetime COMMENT '创建时间',
+    `avatar_url` varchar(255) COMMENT '头像',
+    `role` varchar(50) COMMENT '角色',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uk_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+
+-- 角色表
+CREATE TABLE `role` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL COMMENT '角色名称',
+    `description` varchar(255) COMMENT '角色描述',
+    `flag` varchar(50) NOT NULL COMMENT '唯一标识',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uk_flag` (`flag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
+
+-- 菜单表
+CREATE TABLE `menu` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL COMMENT '菜单名称',
+    `path` varchar(255) COMMENT '菜单路径',
+    `icon` varchar(255) COMMENT '图标',
+    `description` varchar(255) COMMENT '描述',
+    `pid` int COMMENT '父菜单ID',
+    `page_path` varchar(255) COMMENT '页面路径',
+    `sort_num` varchar(255) COMMENT '排序',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='菜单表';
+
+-- 角色菜单关联表
+CREATE TABLE `role_menu` (
+    `role_id` int NOT NULL COMMENT '角色ID',
+    `menu_id` int NOT NULL COMMENT '菜单ID',
+    PRIMARY KEY (`role_id`, `menu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色菜单关联表';
+
+-- 字典表
+CREATE TABLE `dict` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL COMMENT '字典名称',
+    `value` varchar(255) NOT NULL COMMENT '字典值',
+    `type` varchar(50) NOT NULL COMMENT '字典类型',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='字典表';
+
+-- 文件表
+CREATE TABLE `file` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL COMMENT '文件名',
+    `type` varchar(50) COMMENT '文件类型',
+    `size` bigint COMMENT '文件大小',
+    `url` varchar(255) COMMENT '文件URL',
+    `md5` varchar(255) COMMENT '文件MD5',
+    `is_delete` tinyint(1) DEFAULT 0 COMMENT '是否删除',
+    `enable` tinyint(1) DEFAULT 1 COMMENT '是否启用',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文件表';
+
+-- 座位表
+CREATE TABLE seat (
+    id INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键 ID',
+    name VARCHAR(50) NOT NULL COMMENT '座位名称',
+    info TEXT COMMENT '座位简介',
+    img VARCHAR(255) COMMENT '座位照片 URL',
+    user_id INT COMMENT '当前使用用户的 ID',
+    user_name VARCHAR(50) COMMENT '当前使用用户的名称',
+    state ENUM('AVAILABLE', 'IN_USE', 'MAINTENANCE', 'RESERVED') DEFAULT 'AVAILABLE' COMMENT '座位状态',
+    start_time VARCHAR(50) COMMENT '开始使用时间',
+    end_time VARCHAR(50) COMMENT '结束使用时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='图书馆座位表';
+
+-- 通知表
+CREATE TABLE `notice` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL COMMENT '通知标题',
+    `content` text COMMENT '通知内容',
+    `time` varchar(255) COMMENT '创建时间',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='通知表';
+
+-- 插入座位数据
+INSERT INTO `seat` (`name`, `info`, `img`, `user_id`, `user_name`, `state`, `start_time`, `end_time`) VALUES
+('A区-01', '靠窗座位，视野好', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('A区-02', '靠近电源插座', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('A区-03', '安静区域', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('B区-01', '靠近空调', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('B区-02', '靠窗座位', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('B区-03', '靠近打印机', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('C区-01', '安静区域', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('C区-02', '靠近电源插座', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('C区-03', '靠窗座位', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
+('D区-01', '靠近空调', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL);
+
+-- 插入通知数据
+INSERT INTO `notice` (`name`, `content`, `time`) VALUES
+('使用规则提醒', '请勿在座位上放置个人物品超过30分钟，否则系统将自动释放座位。', '2025-06-03 13:00:00'),
+('系统升级通知', '系统将于本周日进行升级，新增座位使用统计功能。', '2025-06-03 14:00:00'),
+('节假日安排', '图书馆开放时间调整为8:00-20:00。', '2025-06-03 09:00:00');
