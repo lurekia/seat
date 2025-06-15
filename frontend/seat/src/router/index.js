@@ -101,7 +101,7 @@ router.beforeEach((to, from, next) => {
     if (!menus) {
       next("/login")
     } else {
-      next("/404")
+      next("/login")
     }
   } else {
     next()

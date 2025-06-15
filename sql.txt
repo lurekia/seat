@@ -101,6 +101,9 @@ INSERT INTO `seat` (`name`, `info`, `img`, `user_id`, `user_name`, `state`, `sta
 ('C区-03', '靠窗座位', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL),
 ('D区-01', '靠近空调', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "AVAILABLE", NULL, NULL);
 
+INSERT INTO `seat` (`name`, `info`, `img`, `user_id`, `user_name`, `state`, `start_time`, `end_time`) VALUES
+('D区-02', '靠窗座位，视野好', 'http://localhost:9090/file/seat.jpg', NULL, NULL, "MAINTENANCE", NULL, NULL);
+
 -- 插入通知数据
 INSERT INTO `notice` (`name`, `content`, `time`) VALUES
 ('使用规则提醒', '请勿在座位上放置个人物品超过30分钟，否则系统将自动释放座位。', '2025-06-03 13:00:00'),
