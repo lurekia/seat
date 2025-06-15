@@ -173,11 +173,11 @@ export default {
       name: "",
       status: "",
       imgs:[{ 
-          src: require('@/assets/seat1.jpg') 
+          src: require('@/assets/seat1.png') 
         }, { 
-          src: require('@/assets/seat2.jpg') 
+          src: require('@/assets/seat2.png') 
         }, { 
-          src: require('@/assets/seat3.jpg') 
+          src: require('@/assets/seat3.png') 
         }],
       reserveDialogVisible: false,
       reserveForm: {
